@@ -1,0 +1,55 @@
+<html>
+	<head>
+		<title>Welcome</title>
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<script src="js/bootstrap-transition.js"></script>
+	<head>
+	<body>
+		{{.Today}} <br/>
+
+		<table border="1">
+			<tr>
+				{{.WeatherInfo.City}} 天气情况
+			</tr>
+			<tr>
+				<th></th>
+				<th>第一天</th>
+				<th>第二天</th>
+				<th>第三天</th>
+				<th>第四天</th>
+				<th>第五天</th>
+				<th>第六天</th>
+			</tr>
+			<tr>
+				<td>温度</td>
+				<td>{{.WeatherInfo.Temp1}}</td>
+				<td>{{.WeatherInfo.Temp2}}</td>
+				<td>{{.WeatherInfo.Temp3}}</td>
+				<td>{{.WeatherInfo.Temp4}}</td>
+				<td>{{.WeatherInfo.Temp5}}</td>
+				<td>{{.WeatherInfo.Temp6}}</td>
+			</tr>
+			<tr>
+				<td>天气</td>
+				<td>{{.WeatherInfo.Weather1}}</td>
+				<td>{{.WeatherInfo.Weather2}}</td>
+				<td>{{.WeatherInfo.Weather3}}</td>
+				<td>{{.WeatherInfo.Weather4}}</td>
+				<td>{{.WeatherInfo.Weather5}}</td>
+				<td>{{.WeatherInfo.Weather6}}</td>
+			</tr>
+			<tr>
+				<td>风力</td>
+				<td>{{.WeatherInfo.Wind1}}</td>
+				<td>{{.WeatherInfo.Wind2}}</td>
+				<td>{{.WeatherInfo.Wind3}}</td>
+				<td>{{.WeatherInfo.Wind4}}</td>
+				<td>{{.WeatherInfo.Wind5}}</td>
+				<td>{{.WeatherInfo.Wind6}}</td>
+			</tr>
+		</table>
+		<a href="http://www.sina.com.cn" target="_Blank">新浪</a>
+		<a href="http://localhost:9999/selectcity">Switch City</a>
+		
+	</body>
+</html>

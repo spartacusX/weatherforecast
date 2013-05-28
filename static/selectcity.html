@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Welcome</title>
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<script src="js/bootstrap-transition.js"></script>
+	<head>
+	<body>
+		<form action="http://127.0.0.1:9999/queryweather" method="post">
+			<!-- 省:<input type="text" name="province">
+			市:<input type="text" name="city"> -->
+			<select name="province">
+				<option value="省">省份</option>
+				<option value="上海">上海</option>
+				<option value="北京">北京</option>
+				<option value="河南">河南</option>
+			</select>
+			<select name="city">
+				<option value="市">城市</option>
+				<option value="上海">上海</option>
+				<option value="北京">北京</option>
+				<option value="洛阳">洛阳</option>
+				<option value="大连">大连</option>
+				<option value="重庆">重庆</option>
+				<option value="兰州">兰州</option>
+				<!-- <option value="敦煌">敦煌</option> -->
+				<option value="郑州">郑州</option>
+			</select>
+			<input type="submit" value="login">
+		</form>
+	</body>
+</html>
