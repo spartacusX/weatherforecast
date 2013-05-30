@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"log"
 	"net/http"
+	"net/url"
 )
 
 type WeatherDetail struct {
@@ -34,10 +35,21 @@ type Weather struct {
 	Weatherinfo WeatherDetail
 }
 
+const PROXYURL = "http://web-proxy.rose.hp.com:8080"
+const BASEURL = "http://m.weather.com.cn/data/"
+
 func GetWeatherByWeb(cityCode string, weather *Weather) {
-	url := "http://m.weather.com.cn/data/" + cityCode + ".html"
+	strURL := BASEURL + cityCode + ".html"
 	//fmt.Println(url)
-	resp, err := http.Get(url)
+	proxy := func(_ *http.Request) (*url.URL, error) {
+		return url.Parse(PROXYURL)
+	}
+
+	transport := &http.Transport{Proxy: proxy}
+
+	client := &http.Client{Transport: transport}
+
+	resp, err := client.Get(strURL)
 	if err != nil {
 		log.Fatal("Get wether data failed: ", err)
 		return

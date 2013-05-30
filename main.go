@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
+	. "github.com/spartacusX/weatherforecast/parser"
+	. "github.com/spartacusX/weatherforecast/queryweather"
 	"html/template"
 	"log"
 	"net/http"
 	"time"
-	. "weather/parser"
-	. "weather/queryweather"
 )
 
 type TodayWeather struct {
